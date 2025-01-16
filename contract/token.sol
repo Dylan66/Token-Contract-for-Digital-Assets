@@ -27,8 +27,9 @@ contract Dalas is ERC20, Ownable, ERC20Permit{
     }
 
     // Override _transfer to add an event
-    function _transfer(address sender, address recipient, uint256 amount) internal override {
-        super._transfer(sender, recipient, amount);
+    function _transfer(address sender, address recipient, uint256 amount) internal {
+        sender = msgSender();
+        _transfer(sender, recipient, amount);
         emit Transfer(sender, recipient, amount);
     }
 
