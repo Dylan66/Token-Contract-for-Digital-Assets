@@ -11,15 +11,25 @@ contract Dalas is ERC20, Ownable, ERC20Permit{
     // Events
     event TokensMinted(address indexed to, uint256 amount);
 
-    constructor(string memory name, string memory symbol, uint256 initialSupply) ERC20("Dalas", "DKL") {
-        _mint(msg.sender, initialSupply *10 ** decimals());
-        emit Transfer(address(0), msg.sender, initialSupply *10 ** decimals());
+    constructor(address initialOwner, uint256 initialSupply)
+        ERC20("Dalas", "DKL")
+        Ownable(initialOwner)
+        ERC20Permit("Dalas")
+    {
+        _mint(initialOwner, initialSupply * 10 ** decimals());
+        emit Transfer(address(0), initialOwner, initialSupply * 10 ** decimals());
     }
 
     // Mint new tokens
     function mint(address to, uint256 amount) public onlyOwner {
         _mint(to, amount);
         emit TokensMinted(to, amount);
+    }
+
+    // Override _transfer to add an event
+    function _transfer(address sender, address recipient, uint256 amount) internal override {
+        super._transfer(sender, recipient, amount);
+        emit Transfer(sender, recipient, amount);
     }
 
 }
