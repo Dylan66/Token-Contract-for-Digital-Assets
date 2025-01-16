@@ -8,3 +8,10 @@ Build an ERC-20 token for issuing, transferring, and tracking balances.
 2️⃣Minting and transferring functionality.
 
 3️⃣Event logs for all transactions.
+
+**Members:**
+1. Kelvin Kyuli
+2. Dealan Wanganga
+3. Georgina
+4. Austin
+5. Bevon
