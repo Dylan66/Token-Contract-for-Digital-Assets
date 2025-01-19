@@ -1,11 +1,8 @@
 PROJECT TITLE: Token-Contract-for-Digital-Assets
-Description: A Token that has name, symbol and supply.
-It has minting and transferring functionality and event log that tracks all transactions.
+Description: The name of the token is Dalas Token, Its symbol is DLS and its total supply is a million tokens. 
+It has minting and transferring functionality and an event log that tracks all transactions.
 
-Features
-Feature 1: Name, symbol, and supply.
-Feature 2: Minting and transferring functionality.
-Feature 3: Event log.
+The link to the landing page is https://token-contract-for-digital-assets-m9i2.vercel.app/ 
 
 Tech Stack used
 Language: Solidity, Javascript
@@ -25,11 +22,11 @@ npx hardhat compile
 4. ​Configure the Avalanche network
 ​Open the hardhat.config.js file and add your Avalanche network details under the networks section.
 
-​1. Deploy to Avalanche network:
-npx hardhat run scripts/deploy.js --network avalanche
-
-2. ​Run the application locally:
-npm start
+   ​4a. Deploy to Avalanche network:
+   npx hardhat run scripts/deploy.js --network avalanche
+   
+   4b. ​Run the application locally:
+   npm start   
 
 Team Members
 1. Bevon Mokua -Creating the landing page
