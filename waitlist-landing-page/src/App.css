@@ -1,38 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+VN:wght@100..400&display=swap');
+
 .App {
-  text-align: center;
+  margin: 0;
+  padding: 0;
+  background-color: #28282B;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1{
+  display: inline-block;
+  margin: 0;
+  justify-content: center;
+  align-content: center;
+  font-size: 80px;
+  background-color: #2f8d46;
+  background-image: url('https://media.geeksforgeeks.org/wp-content/uploads/20231218224644/w.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation-timing-function: ease;
+  animation-name: grow;
+  animation-iteration-count: 1;
+  animation-duration: 1s;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@keyframes grow {
+  0% {
+    transform: scaleX(1.1);
+  }
+  50% {
+    transform: scaleX(1.8);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+p{
+  color: #E2DFD2;
+  font-size: 30px;
+  justify-items: center;
+  font-family: "Playwrite VN", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+form{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 1rem;
+}
+
+input, textarea, button {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+button {
+  background-color: #007bff;
   color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
 }
 
-.App-link {
-  color: #61dafb;
+button:hover {
+  background-color: #0056b3;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#statusMessage {
+  margin-top: 1rem;
+  font-size: 0.9rem;
 }
