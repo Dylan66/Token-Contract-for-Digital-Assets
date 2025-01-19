@@ -43,9 +43,9 @@ npx hardhat run scripts/deploy.js --network avalanche
 npm start
 ```
 Team Members
-Bevon Mokua - Creating the landing page
-Irene Nditi - Editing README.md
-Kevin Kyuli - Deploying to the Avalanche C-chain
-Dealan Wanganga - Creating the backend
-Austine Karanja - Team Leader 
+### 1. Bevon Mokua - Creating the landing page
+### 2.Irene Nditi - Editing README.md
+### 3. Kevin Kyuli - Deploying to the Avalanche C-chain
+### 4. Dealan Wanganga - Creating the backend
+### 5. Austine Karanja - Team Leader 
 
