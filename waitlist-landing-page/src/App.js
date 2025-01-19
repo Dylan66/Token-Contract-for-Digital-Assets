@@ -101,9 +101,6 @@ function App() {
         />
         <button type="submit">Join Waitlist</button>
       </form>
-      {status.message && (
-        <p style={{color: status.success ? "green" : "red"}}>{status.message}</p>
-      )}
     </div>
   );
 }
