@@ -24,7 +24,28 @@ It has minting and transferring functionality and event log that tracks all tran
 ```bash
 git clone [repository-url]
 ```
-### 2. Install Dependencies
+### 2. Install Dependencies:
 ```bash
 npx hardhat compile
 ```
+### 3. Compile the Contracts: 
+```bash
+npx hardhat compile
+```
+### 4. Configure the Avalanche Network
+Open the hardhat.config.js file and add your Avalanche network details under the networks section.
+### 5. Deploy to Avalanche network:
+```bash
+npx hardhat run scripts/deploy.js --network avalanche
+```
+6. Run the Application Locally
+```
+npm start
+```
+Team Members
+Bevon Mokua - Creating the landing page
+Irene Nditi - Editing README.md
+Kevin Kyuli - Deploying to the Avalanche C-chain
+Dealan Wanganga - Creating the backend
+Austine Karanja - Team Leader 
+
