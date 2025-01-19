@@ -36,24 +36,38 @@ function App() {
 
     // Submit form data to backend
     try {
-      const response = await fetch("1DgTwOfIw4NAL_PZtp1YcsKfVVn3u2tz4503dDYhSlar-iQhmUm8bGaHz", {
+      const response = await fetch("https://script.google.com/macros/s/AKfycbxFKbISR-2atW_hHhSxcFQh-SKhCdRsug3QXgHd4TDHbHIpMOKxGUmx2y6Mzl2AF6wi/exec", {
         method: "POST",
-        headers: {"Content-Type": "application/json"},
+        headers: {
+          "Content-Type": "application/json"
+        },
         body: JSON.stringify(formData),
       });
 
-      const result = await response.json();
-      if(result.success) {
-        setStatus({ success: true, message: result.message});
-        setFormData({ name: "", email: "", interest: ""}); // Resets the form
-      } else {
-        setStatus({ success: false, message: result.message});
+      if(!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const text = await response.text();
+
+      try{
+        const result = JSON.parse(text);
+        if(result.success) {
+          setStatus({ success: true, message: result.message});
+          setFormData({ name: "", email: "", interest: ""});
+        } else {
+          setStatus({ success: false, message: result.message});
+          setFormData({ name: "", email: "", interest: ""});
+        }
+      } catch (jsonError) {
+        console.error("Failed to parse JSON:", jsonError);
+        setStatus({ success: false, message: "Unexpected response from server."});
       }
     } catch (error) {
-      console.error("Error submitting form:", error);
-      setStatus({ success: false, message: "An error occured. Please try again."});
-    }
-  };
+      console.error("Error submitting the form:", error);
+      setStatus({ success: false, message: "An error occurred. Please try again."})
+    };
+  }
 
   return (
     <div className="App">
@@ -74,6 +88,7 @@ function App() {
           placeholder="Your Email"
           value={formData.email}
           onChange={handleChange}
+          autoComplete="Yes"
           required
         />
         <textarea
@@ -82,12 +97,10 @@ function App() {
           value={formData.interest}
           onChange={handleChange}
           rows="3"
+          required
         />
         <button type="submit">Join Waitlist</button>
       </form>
-      {status.message && (
-        <p style={{color: status.success ? "green" : "red"}}>{status.message}</p>
-      )}
     </div>
   );
 }
