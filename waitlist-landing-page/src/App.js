@@ -54,6 +54,7 @@ function App() {
         const result = JSON.parse(text);
         if(result.success) {
           setStatus({ success: true, message: result.message});
+          setFormData({ name: "", email: "", interest: ""});
         } else {
           setStatus({ success: false, message: result.message});
           setFormData({ name: "", email: "", interest: ""});
