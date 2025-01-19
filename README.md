@@ -23,7 +23,7 @@ The URL to the landing page is https://token-contract-for-digital-assets-m9i2.ve
 ### 1. Clone the repository:
 
 ```bash
-git clone [repository-url]
+git clone https://github.com/Avalanche-Team1-DAO-Kenya/Token-Contract-for-Digital-Assets.git 
 ```
 ### 2. Install Dependencies:
 ```bash
