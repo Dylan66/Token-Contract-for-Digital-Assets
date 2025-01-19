@@ -1,41 +1,21 @@
-PROJECT TITLE: Token-Contract-for-Digital-Assets
-Description: A Token that has name, symbol and supply.
-It has minting and transferring functionality and event log that tracks all transactions.
+# Token-Contract-for-Digital-Assets
 
-Features
-Feature 1: Name, symbol, and supply.
-Feature 2: Minting and transferring functionality.
-Feature 3: Event log.
+## Description
+The contract defines the name, symbol, and supply of the token. It supports minting and transferring functionality, and tracks all transactions via event logs.
+This project implements a token contract that includes basic functionalities for managing digital assets. 
 
-Tech Stack used
-Language: Solidity, Javascript
-Framework: React, Avalanche, and Node.js
-Tools: Hardhat
+## Features
+- **The token name is Dalas, its symbol is DLS and its total supply is 1,000,000.
+- **Minting and Transferring Functionality:** Supports minting new tokens and transferring tokens between users.
+- **Event Log:** Records transaction details for minting and transferring tokens.
 
-Setup Instructions
-1. Clone the repository:
+## Tech Stack
+- **Language:** Solidity, JavaScript
+- **Framework:** React, Avalanche, Node.js
+- **Tools:** Hardhat
+
+## Setup Instructions
+
+### 1. Clone the repository:
+```bash
 git clone [repository-url]
-
-2. ​Install dependencies:
-npm install
-
-3. ​Compile the contracts:
-npx hardhat compile
-
-4. ​Configure the Avalanche network
-​Open the hardhat.config.js file and add your Avalanche network details under the networks section.
-
-​1. Deploy to Avalanche network:
-npx hardhat run scripts/deploy.js --network avalanche
-
-2. ​Run the application locally:
-npm start
-
-Team Members
-1. Bevon Mokua -Creating the landing page
-2. Irene Nditi -Editing README.md
-3. Kevin Kyuli - Deploying to the Avalanche C-chain
-4. Dealan Wanganga -Creating the backend
-6. Austine Karanja -Team Leader
-   
-
