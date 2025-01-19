@@ -38,7 +38,6 @@ function App() {
     try {
       const response = await fetch("https://script.google.com/macros/s/AKfycbxFKbISR-2atW_hHhSxcFQh-SKhCdRsug3QXgHd4TDHbHIpMOKxGUmx2y6Mzl2AF6wi/exec", {
         method: "POST",
-        mode: "no-cors",
         headers: {
           "Content-Type": "application/json"
         },
@@ -55,9 +54,9 @@ function App() {
         const result = JSON.parse(text);
         if(result.success) {
           setStatus({ success: true, message: result.message});
-          setFormData({ name: "", email: "", interest: ""}); // Resets the form
         } else {
           setStatus({ success: false, message: result.message});
+          setFormData({ name: "", email: "", interest: ""});
         }
       } catch (jsonError) {
         console.error("Failed to parse JSON:", jsonError);
