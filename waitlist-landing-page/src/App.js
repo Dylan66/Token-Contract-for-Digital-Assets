@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import "./App.css";
 
-function App() {
+const App = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    cChainAddress: "",
     interest: "",
   });
 
@@ -15,37 +16,54 @@ function App() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const validateCChainAddress = (address) => {
+    const cChainRegex = /^0x[a-fA-F0-9]{40}$/;
+    return cChainRegex.test(address);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     setStatus({ success: null, message: "" });
 
-    if (!formData.name || !formData.email) {
-      setStatus({ success: false, message: "Name and Email are required" });
+    if (!formData.name || !formData.email || !formData.cChainAddress) {
+      setStatus({ success: false, message: "All fields are required" });
       setIsSubmitting(false);
       return;
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
-      setStatus({ success: false, message: "Please enter a valid email" });
+      setStatus({ success: false, message: "Invalid email format" });
+      setIsSubmitting(false);
+      return;
+    }
+
+    if (!validateCChainAddress(formData.cChainAddress)) {
+      setStatus({ 
+        success: false, 
+        message: "Invalid C-Chain address format (0x followed by 40 hex characters)" 
+      });
       setIsSubmitting(false);
       return;
     }
 
     try {
-      // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1000));
-      
       setStatus({ 
         success: true, 
-        message: "Thank you! You've been added to the waitlist" 
+        message: "Registration successful! You're now on the waitlist." 
       });
-      setFormData({ name: "", email: "", interest: "" });
+      setFormData({ 
+        name: "", 
+        email: "", 
+        cChainAddress: "", 
+        interest: "" 
+      });
     } catch (error) {
       setStatus({ 
         success: false, 
-        message: "Submission failed. Please try again" 
+        message: "Submission error. Please try again." 
       });
     } finally {
       setIsSubmitting(false);
@@ -56,9 +74,9 @@ function App() {
     <div className="App">
       <div className="container">
         <header>
-          <h1>Join Dalas Token Waitlist</h1>
+          <h1>Join DalasToken Waitlist</h1>
           <p className="subtitle">
-            Secure early access to innovative financial solutions
+            Secure early access to innovative blockchain solutions
           </p>
         </header>
 
@@ -86,9 +104,20 @@ function App() {
           </div>
 
           <div className="form-group">
+            <input
+              type="text"
+              name="cChainAddress"
+              placeholder="C-Chain Address (0x...)"
+              value={formData.cChainAddress}
+              onChange={handleChange}
+              disabled={isSubmitting}
+            />
+          </div>
+
+          <div className="form-group">
             <textarea
               name="interest"
-              placeholder="What interests you about DalasToken?"
+              placeholder="What interests you about Dalas Token?"
               value={formData.interest}
               onChange={handleChange}
               rows="4"
@@ -101,7 +130,7 @@ function App() {
             className="cta-button"
             disabled={isSubmitting}
           >
-            {isSubmitting ? "Submitting..." : "Join Waitlist →"}
+            {isSubmitting ? "Processing..." : "Join Waitlist →"}
           </button>
 
           {status.message && (
@@ -113,6 +142,6 @@ function App() {
       </div>
     </div>
   );
-}
+};
 
 export default App;

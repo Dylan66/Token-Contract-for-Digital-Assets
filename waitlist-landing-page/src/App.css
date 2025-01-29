@@ -4,10 +4,11 @@
   --primary: #818CF8;
   --primary-hover: #6366F1;
   --accent: #2DD4BF;
-  --text: #ffffff;
+  --text: #F8FAFC;
   --text-muted: #94A3B8;
   --success: #34D399;
   --error: #F87171;
+  --wallet-accent: #FFD700;
 }
 
 .App {
@@ -79,6 +80,16 @@ input:focus, textarea:focus {
   box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.2);
 }
 
+input[name="cChainAddress"] {
+  font-family: 'Courier New', monospace;
+  letter-spacing: 0.5px;
+}
+
+input[name="cChainAddress"]:focus {
+  border-color: var(--wallet-accent);
+  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.1);
+}
+
 textarea {
   resize: vertical;
   min-height: 120px;
@@ -141,5 +152,9 @@ textarea {
   
   h1 {
     font-size: 2rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
   }
 }
