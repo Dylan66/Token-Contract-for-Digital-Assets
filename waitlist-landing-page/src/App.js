@@ -52,7 +52,7 @@ const App = () => {
       await new Promise(resolve => setTimeout(resolve, 1000));
       setStatus({ 
         success: true, 
-        message: "Registration successful! You're now on the waitlist." 
+        message: "Registration successful! Join our telegram channel:  t.me/DalasTokenEduBot " 
       });
       setFormData({ 
         name: "", 
@@ -105,7 +105,7 @@ const App = () => {
 
           <div className="form-group">
             <input
-              type="text"
+              type="text"t 
               name="cChainAddress"
               placeholder="C-Chain Address (0x...)"
               value={formData.cChainAddress}
@@ -123,7 +123,7 @@ const App = () => {
               rows="4"
               disabled={isSubmitting}
             />
-          </div>
+          </div>i
 
           <button 
             type="submit" 
