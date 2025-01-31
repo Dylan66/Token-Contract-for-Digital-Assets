@@ -52,7 +52,7 @@ const App = () => {
       await new Promise(resolve => setTimeout(resolve, 1000));
       setStatus({ 
         success: true, 
-        message: "Registration successful! Join our telegram channel:  t.me/DalasTokenEduBot " 
+        message: "Registration successful! Join our telegram channel: t.me/DalasTokenEduBot " 
       });
       setFormData({ 
         name: "", 
