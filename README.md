@@ -23,7 +23,7 @@ The URL to the landing page is https://https://dalas-three.vercel.app/
 ### 1. Clone the repository:
 
 ```bash
-git clone https://dalas-three.vercel.app/ 
+git clone https://github.com/Avalanche-Team1-DAO-Kenya/Token-Contract-for-Digital-Assets.git 
 ```
 ### 2. Install Dependencies:
 ```bash
