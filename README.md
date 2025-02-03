@@ -4,7 +4,7 @@
 
 The token name is Dalas, its symbol is DLS and its supply is 1,000,000. 
 It has minting and transferring functionality and event log that tracks all transactions.
-The URL to the landing page is https://token-contract-for-digital-assets-m9i2.vercel.app/ 
+The URL to the landing page is https://https://dalas-three.vercel.app/ 
 
 ## Features
 
