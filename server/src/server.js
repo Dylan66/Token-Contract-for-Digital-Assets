@@ -11,7 +11,7 @@ app.use(express.json());
 
 // Root route
 app.get("/", (req, res) => {
-  res.send("DalasToken Backend is Running 🚀");
+  res.send("Dalas Token Backend is Running 🚀");
 });
 
 // API routes
